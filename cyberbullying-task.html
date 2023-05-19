@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cyberbullying Task</title>
+ <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4287f5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin: auto ;
+  margin-top: 10%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+ </style>
+
+
+
+
+</head>
+<body>
+
+
+  <div class="container">
+    <h1 id="instructions">Welcome to this task. 
+        <br>
+        You will be shown 3 images, each for 15 seconds. Please carefully examine each image.
+        <br>
+        Press Start to begin.
+    </h1>
+
+    <button id="startButton">Start Session</button>
+    <img id="imageElement" src="first-image.png" style="display: none;">
+
+
+
+
+
+  
+</body>
+
+<script>
+
+const links = [
+    'undemanding-task-instructions.html',
+    'demanding-task.html'
+  ];
+const startButton = document.getElementById('startButton');
+const imageElement = document.getElementById('imageElement');
+const randomIndex = Math.floor(Math.random() * links.length);
+    localStorage.setItem("currentTask","cyberbullying")
+const instructions = document.getElementById('instructions')
+
+// Set the image sources for each session
+const sessionImages = [
+  'first-image.png',
+  'second-image.png',
+  'third-image.png',
+  
+];
+
+// Variable to keep track of the current session
+let currentSession = 0;
+
+// Function to handle the start of each session
+function startSession() {
+    imageElement.style.display = 'block';
+    startButton.style.display ='none';
+    instructions.style.display='none';
+  // Check if all sessions have been completed
+  if (currentSession >= sessionImages.length) {
+    // Redirect to another page after all sessions are completed
+    window.location.href = links[randomIndex];
+    return;
+  }
+
+  // Update the image source for the current session
+  imageElement.src = sessionImages[currentSession];
+
+  // Increment the current session counter
+  currentSession++;
+
+  // Show the image for 15 seconds
+  setTimeout(nextSession, 15000);
+}
+
+// Function to proceed to the next session
+function nextSession() {
+  // Start the next session
+  startSession();
+}
+
+// Add a click event listener to the start button
+startButton.addEventListener('click', startSession);
+</script>
+</html>
