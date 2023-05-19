@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Question Box</title>
+  <link rel="stylesheet" href="creativity_styles.css">
+  <script src="creativity.js" defer></script>
+ <script>
+    const links = [
+    'undemanding-task-instructions.html',
+    'demanding-task-instructions.html'
+  ];
+
+  // Generate a random index to select a link
+  const randomIndex = Math.floor(Math.random() * links.length);
+    localStorage.setItem("currentTask","creativity")
+
+  setTimeout(() => {
+    window.location.href = links[randomIndex];
+  }, 10000); // 60000 milliseconds = 1 minute
+  
+ </script>
+</head>
+<body>
+  <div class="container">
+    <h1 class="question">List as many uses for a pen? Be creative!</h1>
+    <div class="response-boxes">
+   
+        <input type="text" class="response-input" placeholder="Response 1">
+        <input type="text" class="response-input" placeholder="Response 2">
+        <input type="text" class="response-input" placeholder="Response 3">
+        <input type="text" class="response-input" placeholder="Response 4">
+        <input type="text" class="response-input" placeholder="Response 5">
+        <input type="text" class="response-input" placeholder="Response 6">
+        <input type="text" class="response-input" placeholder="Response 7">
+        <input type="text" class="response-input" placeholder="Response 8">
+        <input type="text" class="response-input" placeholder="Response 9">
+        <input type="text" class="response-input" placeholder="Response 10">
+      </div>
+  </div>
+  
+</body>
+</html>

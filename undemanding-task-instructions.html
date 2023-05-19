@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Undemanding Task Instructions</title>
+
+
+  <style>
+body {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+button {
+  font-size: 50px;
+  width: 200px;
+}
+  </style>
+</head>
+
+
+<body>
+<h1>Nice work! We will now commence the <b>BREAK</b> period where you will be presented with a simple task.</h1>
+
+<h1> Numbers will periodically appear on the screen. Classify them as odd or even. </h1>
+  
+ <h1> As a reminder, please refrain from using other devices or multi-tasking for the full duration of the study.    </h1>
+
+<button id="startButton">
+  Start
+</button>
+
+<script>
+const startButton = document.getElementById('startButton')
+startButton.addEventListener('click', () => {
+    // Redirect to another page
+    window.location.href = 'undemanding-task.html';
+  });
+</script>
+
+</body>
+</html>

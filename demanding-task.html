@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demanding Task</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+        margin: 5%;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+<h1><b>Break</b> time! </h1>
+    
+<h1>During this break, please choose an application you typically use. Feel free to follow links and interact with the applications as usual.</h1>
+   <h1> You will hear a tone when it is time to resume the study. Please return to this tab when you hear the tone. 
+      </h1>
+    <div class="social-icons">
+      <a href="https://www.reddit.com/" target="_blank">
+        <i class="fab fa-reddit"></i>
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+      <a href="https://www.youtube.com/" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.twitter.com/" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </div>
+
+<script>
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+function playTone(duration, frequency) {
+  // Create an OscillatorNode
+  const oscillator = audioContext.createOscillator();
+  
+  // Set the frequency of the oscillator
+  oscillator.frequency.value = frequency;
+  
+  // Connect the oscillator to the AudioContext destination (e.g., speakers)
+  oscillator.connect(audioContext.destination);
+  
+  // Start the oscillator
+  oscillator.start();
+  
+  // Stop the oscillator after the specified duration
+  setTimeout(function() {
+    oscillator.stop();
+  }, duration);
+}
+
+setTimeout(() => {
+    playTone(500, 440);
+  }, 19000); // 60000 milliseconds = 1 minute
+
+setTimeout(() => {
+    window.location.href = `${localStorage.getItem("currentTask")}-outcome.html`; 
+  }, 20000); // 60000 milliseconds = 1 minute
+
+</script>
+  
+</body>
+</html>

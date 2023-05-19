@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f3f3f3;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.likert-scale-item {
+    margin-bottom: 20px;
+}
+
+.likert-scale-item label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.likert-scale-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.likert-scale-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+.likert-scale-options label {
+    margin-right: 20px;
+    color: #777;
+}
+
+.likert-scale-options label:last-child {
+    margin-right: 0;
+}
+
+.likert-scale-options input[type="radio"]:checked + label {
+    color: #333;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 100px;
+}
