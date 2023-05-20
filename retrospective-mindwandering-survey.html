@@ -62,11 +62,33 @@
             </div>
         </div>
 
-        <div class="submit-button">
-            <button type="submit">Submit</button>
-        </div>
+   
 
     </form>
+    <div class="submit-button">
+        <button type="submit" id="submit">Submit</button>
+    </div>
+    <p id='end' style="text-align: center; display: none;">Thanks for completing the study. You will be redirected to the main experiment page now. Try out the other experiments!</p>
+<script>
+const endText = document.getElementById('end')
+ const submit = document.getElementById('submit')
+  
+submit.addEventListener('click', function() {
 
+    endText.style.display = 'block'
+
+    setTimeout(() => {
+        window.location.href = '../index.html';
+  }, 4000);
+
+
+ 
+ 
+});
+
+
+
+
+</script>
 </body>
 </html>
