@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prospective Memory Practice</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 34px;
+            text-align: center;
+            padding-top: 200px;
+        }
+
+        #wordContainer {
+            display: none;
+        }
+
+        #feedback {
+            display: none;
+            margin-top: 40px;
+            font-weight: bold;
+            margin: 40px;
+        }
+
+        #startButton {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-left: 47%
+        }
+    </style>
+</head>
+<body>
+    <div id="wordContainer">
+        <div id="wordDisplay"></div>
+        <div id="feedback"></div>
+    </div>
+    <button id="startButton">Start</button>
+
+    <script>
+        // Array of strings
+        var strings = [
+            { word: "illimate", type: "non-word", correctKey: 37 },
+            { word: "technical", type: "word", correctKey: 39 },
+            { word: "sponsor", type: "word", correctKey: 39 },
+            { word: "immaculate", type: "word", correctKey: 39 },
+            { word: "system", type: "special", correctKey: 38 },
+            { word: "tiksort", type: "non-word", correctKey: 37 }
+        ];
+
+        var currentIndex = -1;
+        var wordDisplay = document.getElementById("wordDisplay");
+        var feedbackElement = document.getElementById("feedback");
+        var wordContainer = document.getElementById("wordContainer");
+        var startButton = document.getElementById("startButton");
+
+        function handleKeyPress(event) {
+            var key = event.keyCode || event.which;
+
+            if (currentIndex >= 0 && currentIndex < strings.length) {
+                var currentString = strings[currentIndex];
+
+                if (key === currentString.correctKey) {
+                    showNextString();
+                } else {
+                    feedbackElement.textContent = "Incorrect. Use the left arrow key for non-words, the right arrow key for words, and the up arrow key for the special word, system.";
+                    feedbackElement.style.display = "block";
+                }
+            }
+        }
+
+   
+
+        function showNextString() {
+            currentIndex++;
+
+            if (currentIndex < strings.length) {
+                feedbackElement.style.display = "none";
+                showString(strings[currentIndex].word);
+            } else {
+                wordDisplay.style.display ='none'
+                feedbackElement.textContent = "Nice work! Try to balance speed and accuracy in the actual trial. Click start to begin.";
+                feedbackElement.style.display = "block";
+                startButton.style.display = "block";
+            }
+        }
+
+        function showString(string) {
+            wordDisplay.textContent = string;
+            wordContainer.style.display = "block";
+        }
+
+        function startTask() {
+            currentIndex = -1;
+            showNextString();
+        }
+
+        // Call showNextString to display the first word
+        showNextString();
+
+        // Event listener for key press
+        document.addEventListener("keydown", handleKeyPress);
+
+        // Event listener for start button click
+        startButton.addEventListener("click", function() {
+            window.location.href = "prospective-memory-task.html"; // Replace with your desired URL
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prospective Memory Task</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 34px;
+            text-align: center;
+            padding-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const links = [
+    '../undemanding-task-instructions.html',
+    '../demanding-task.html'
+  ];
+  const randomIndex = Math.floor(Math.random() * links.length);
+    localStorage.setItem("currentTask","prospective-memory")
+        // Array of strings
+        var strings = [
+            "candel",
+            "trigger",
+            "miasma",
+            "temporal",
+            "reticent",
+            "moosma",
+            "system",
+            "ameleorate",
+            "yendon",
+            "tripsic",
+            "soonic",
+            "reels",
+            "tenor"
+        ];
+
+        var currentIndex = 0;
+
+        function handleKeyPress(event) {
+            var key = event.keyCode || event.which;
+            
+            // Left arrow key
+            if (key === 37) {
+                console.log("Not a word");
+            }
+            
+            // Right arrow key
+            else if (key === 39) {
+                console.log("Word");
+            }
+            
+            // Up arrow key
+            else if (key === 38) {
+                console.log("system");
+            }
+
+            // Show the next string
+            currentIndex++;
+            if (currentIndex < strings.length) {
+                showString(strings[currentIndex]);
+            }
+        }
+
+        function showString(string) {
+            document.body.textContent = string;
+        }
+
+        // Start the task
+        showString(strings[currentIndex]);
+
+        // Event listener for key press
+        document.addEventListener("keydown", handleKeyPress);
+
+
+  setTimeout(() => {
+    window.location.href = links[randomIndex];
+  }, 10000); // 60000 milliseconds = 1 minute
+  
+    
+    </script>
+</body>
+</html>

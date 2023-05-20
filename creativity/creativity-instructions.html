@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Creativity Task Instructions</title>
+
+  <style>
+    .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#instruction-text p {
+  display: none;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  margin: 40px;
+}
+
+
+#button-container {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#start-button {
+  display: none;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Instructions</h1>
+    <div id="instruction-text">
+      <p>On the next page, you will be given a minute to come up with as many possible uses for a simple object. Come up with as many uses for the object as possible. Feel free to be creative and original.</p>
+        <p>For example, here are some alternative uses for a brick</p>
+        <p style="margin: 10px; margin-left: 100px;">A step</p>
+        <p style="margin: 10px; margin-left: 100px;">A paperweight</p>
+        <p style="margin: 10px; margin-left: 100px;">A diving aid</p>
+        <p>At the end of the minute, you will be redirected to another page with new instructions.  </p>
+<p>It is IMPORTANT you avoid using other applications or multi-tasking during the FULL duration of this study. </p>
+        <p>Click Start when you are ready. </p>
+    </div>
+    <div id="button-container">
+      <button id="next-button">Next</button>
+      <button id="start-button">Start</button>
+    </div>
+  </div>
+
+
+
+
+
+
+  <script >
+ 
+
+  const instructionText = document.getElementById('instruction-text');
+  const nextButton = document.getElementById('next-button');
+  const startButton = document.getElementById('start-button');
+
+  let currentIndex = 0;
+  const sentences = Array.from(instructionText.getElementsByTagName('p'));
+
+  // Show the first sentence
+  sentences[currentIndex].style.display = 'block';
+
+  nextButton.addEventListener('click', () => {
+    // Increment the index
+    currentIndex++;
+
+    // Check if there are more sentences
+    if (currentIndex < sentences.length) {
+      // Show the next sentence
+      sentences[currentIndex].style.display = 'block';
+      if (currentIndex == sentences.length-1) {
+        nextButton.style.display = 'none';
+      startButton.style.display = 'block';
+      }
+    } 
+  });
+
+  startButton.addEventListener('click', () => {
+    // Redirect to another page
+    window.location.href = 'creativity-task.html';
+  });
+;
+
+    
+    
+    
+     </script>
+    
+
+</body>
+</html>

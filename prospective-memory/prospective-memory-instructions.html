@@ -1,9 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Creativity Task Instructions</title>
-  <link rel="stylesheet" href="creativity_styles.css">
-  <script src="creativity.js" defer></script>
+  <title>Prospective Memory Task Instructions</title>
   <style>
     .container {
   display: flex;
@@ -51,14 +50,12 @@ button:hover {
   <div class="container">
     <h1>Instructions</h1>
     <div id="instruction-text">
-      <p>On the next page, you will be given a minute to come up with as many possible uses for a simple object. Come up with as many uses for the object as possible. Feel free to be creative and original.</p>
-        <p>For example, here are some alternative uses for a brick</p>
-        <p style="margin: 10px; margin-left: 100px;">A step</p>
-        <p style="margin: 10px; margin-left: 100px;">A paperweight</p>
-        <p style="margin: 10px; margin-left: 100px;">A diving aid</p>
-        <p>At the end of the minute, you will be redirected to another page with new instructions.  </p>
-<p>It is IMPORTANT you avoid using other applications or multi-tasking during the FULL duration of this study. </p>
-        <p>Click Start when you are ready. </p>
+      <p>In this study, you will be classifying strings (combination of letters) as words or non-words.</p>
+        <p style="margin: 10px; margin-left: 100px;">If a string is a word, press the right arrow key.</p>
+        <p style="margin: 10px; margin-left: 100px;">If a string is not a word, press the left arrow key.</p>
+        <p style="margin: 10px; margin-left: 100px;">Let's practice:</p>
+
+
     </div>
     <div id="button-container">
       <button id="next-button">Next</button>
@@ -77,6 +74,7 @@ button:hover {
   const instructionText = document.getElementById('instruction-text');
   const nextButton = document.getElementById('next-button');
   const startButton = document.getElementById('start-button');
+  
 
   let currentIndex = 0;
   const sentences = Array.from(instructionText.getElementsByTagName('p'));
@@ -101,11 +99,20 @@ button:hover {
 
   startButton.addEventListener('click', () => {
     // Redirect to another page
-    window.location.href = 'creativity-task.html';
+    window.location.href = 'prospective-memory-practice.html';
+
+
+
+
+
+
+    
   });
 ;
 
-    
+
+
+
     
     
      </script>

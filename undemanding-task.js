@@ -45,7 +45,7 @@ function handleChoice(event) {
 
 // Redirect the page after one minute
 setTimeout(() => {
-    window.location.href = `${localStorage.getItem("currentTask")}-outcome.html`; 
+    window.location.href = `${localStorage.getItem("currentTask")}/${localStorage.getItem("currentTask")}-outcome.html`; 
   }, 20000); // 60000 milliseconds = 1 minute
   
 

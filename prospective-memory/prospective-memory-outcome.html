@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prospective Memory Outcome</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-size: 34px;
+            text-align: center;
+            padding-top: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>We'll be resuming the task now. Press any key to begin.</h1>
+
+
+    <script>
+
+        // Array of strings
+        var strings = [
+
+    "Serene",
+    "Frabble",
+    "Venture",
+    "Blimble",
+    "Enchant",
+    "Quagget",
+    "System",
+    "Zelicious",
+    "Plivver",
+    "Harmony",
+    "Jubilant",
+    "Cascade",
+    "Yondulous"
+
+
+
+
+        ];
+
+        var currentIndex = -1;
+
+        function handleKeyPress(event) {
+            var key = event.keyCode || event.which;
+            
+
+
+            // Show the next string
+            currentIndex++;
+            if (currentIndex < strings.length) {
+                showString(strings[currentIndex]);
+            }
+        }
+
+        function showString(string) {
+            document.body.textContent = string;
+        }
+
+        // Start the task
+
+
+       
+
+        // Event listener for key press
+        document.addEventListener("keydown", handleKeyPress);
+
+
+  setTimeout(() => {
+    window.location.href = "../retrospective-mindwandering-survey.html";
+  }, 10000); // 60000 milliseconds = 1 minute
+  
+    
+    </script>
+</body>
+</html>
