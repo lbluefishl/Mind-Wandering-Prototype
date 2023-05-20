@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Privacy Outcome</title>
+  <style>
+    /* Add the CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4287f5;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+
+      text-align: center;
+    }
+
+    .likert-item {
+      margin-bottom: 10px;
+    }
+
+    .likert-item label {
+      font-weight: bold;
+    }
+
+    .likert-item input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .likert-item input[type="radio"] + label {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="instructions">Please review each image again, answering the prompts that follow. Pretend you and your partner have taken a similar photo.
+    <br> Press Start to Begin</h1>
+  <button id="startButton">Start</button>
+  <img id="imageElement" src="01.png" style="display: none";>
+  <form id="likertForm" style="display: none;">
+    <div class="likert-item">
+        <p>How likely would you share this photo on social media such as Facebook or Instagram?</p>
+      <input type="radio" id="item1_sd" name="item1" value="Strongly Disagree">
+      <label for="item1_sd">Very Unlikely</label>
+      <input type="radio" id="item1_d" name="item1" value="Disagree">
+      <label for="item1_d">Unlikely</label>
+      <input type="radio" id="item1_n" name="item1" value="Neutral">
+      <label for="item1_n">Neutral</label>
+      <input type="radio" id="item1_a" name="item1" value="Agree">
+      <label for="item1_a">Likely</label>
+      <input type="radio" id="item1_sa" name="item1" value="Strongly Agree">
+      <label for="item1_sa">Very Likely</label>
+    </div>
+    <div class="likert-item">
+        <p>How likely would you consult with your partner prior to sharing the photo?</p>
+      <input type="radio" id="item2_sd" name="item2" value="Strongly Disagree">
+      <label for="item2_sd">Very Unlikely</label>
+      <input type="radio" id="item2_d" name="item2" value="Disagree">
+      <label for="item2_d">Unlikely</label>
+      <input type="radio" id="item2_n" name="item2" value="Neutral">
+      <label for="item2_n">Neutral</label>
+      <input type="radio" id="item2_a" name="item2" value="Agree">
+      <label for="item2_a">Likely</label>
+      <input type="radio" id="item2_sa" name="item2" value="Strongly Agree">
+      <label for="item2_sa">Very Likely</label>
+    </div>
+  
+    <button type="submit" id="submitButton" style="display: none"> Submit</button>
+
+  </form>
+  <button id="nextButton" style="display: none;">Next</button>
+ <script>
+    // Get references to the necessary DOM elements
+const startButton = document.getElementById('startButton');
+const imageElement = document.getElementById('imageElement');
+const nextButton = document.getElementById('nextButton');
+const form = document.getElementById('likertForm');
+const instructions = document.getElementById('instructions')
+// Set the image sources for each session
+const sessionImages = [
+'01.png',
+'02.png',
+'05.png',
+'06.jpg',
+  
+];
+
+// Variable to keep track of the current session
+let currentSession = 0;
+
+// Function to handle the start of each session
+function nextSession() {
+
+  // Check if all sessions have been completed
+  if (currentSession >= sessionImages.length) {
+    // Redirect to another page after all sessions are completed
+    window.location.href = '../retrospective-mindwandering-survey.html';
+    return;
+  }
+
+  // Update the image source for the current session
+  imageElement.src = sessionImages[currentSession];
+
+  // Increment the current session counter
+  currentSession++;
+form.reset();
+
+ 
+}
+
+function startSession() {
+    form.style.display = 'block';
+    startButton.style.display = 'none';
+    imageElement.style.display = 'block';
+    instructions.style.display = 'none'
+    nextButton.style.display='block';
+currentSession++;
+}
+
+
+
+startButton.addEventListener('click', startSession);
+
+
+nextButton.addEventListener('click', nextSession);
+
+ </script>
+</body>
+</html>
