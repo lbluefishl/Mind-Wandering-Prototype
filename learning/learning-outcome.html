@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning Outcome</title>
+ <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4287f5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  margin: auto ;
+  margin-top: 10%;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+ </style>
+
+
+
+
+</head>
+<body>
+
+
+  <div class="container">
+    <h1 id="instructions">
+        You will now resume the task. Please answer the questions about the passage you read earlier.   
+
+        <br>
+        Press Start to begin.
+    </h1>
+
+
+
+    <form id="likertForm" style="display: none;">
+        <div class="likert-item">
+        <p>The authors indicate that people value gift-giving because they feel it</p>
+        <input type="radio" id="option1A" name="giftValue" value="A">
+        <label for="option1A">A) functions as a form of self-expression</label><br>
+        <input type="radio" id="option1B" name="giftValue" value="B">
+        <label for="option1B">B) is an inexpensive way to show appreciation</label><br>
+        <input type="radio" id="option1C" name="giftValue" value="C">
+        <label for="option1C">C) requires the gift-recipient to reciprocate</label><br>
+        <input type="radio" id="option1D" name="giftValue" value="D">
+        <label for="option1D">D) can serve to strengthen a relationship</label><br>
+        <br>
+            </div>
+        <div class="likert-item">
+        <p>The authors would likely attribute the differences in
+            gift-giver and recipient mean appreciation as
+            represented in the graph to</p>
+        <input type="radio" id="option2A" name="giftValue2" value="A">
+        <label for="option2A">A) an inability to shift perspective.</label><br>
+        <input type="radio" id="option2B" name="giftValue2" value="B">
+        <label for="option2B">B) an increasingly materialistic culture.</label><br>
+        <input type="radio" id="option2C" name="giftValue2" value="C">
+        <label for="option2C">C) a growing opposition to gift-giving.</label><br>
+        <input type="radio" id="option2D" name="giftValue2" value="D">
+        <label for="option2D">D) a misunderstanding of intentions.</label><br>
+        <br>
+        </div>
+   
+    
+      </form>
+      <button type="submit" id="submitButton" style="display: none;"> Submit</button>
+  
+
+
+<button id="startButton">Start Session</button>
+
+  
+</body>
+
+<script>
+
+const startButton = document.getElementById('startButton');
+const instructions = document.getElementById('instructions')
+const likertForm = document.getElementById('likertForm')
+const submit = document.getElementById('submitButton')
+
+
+// Function to handle the start of each session
+function startSession() {
+    startButton.style.display ='none';
+    instructions.style.display='none';
+    likertForm.style.display ='block';
+    submit.style.display='block'
+}
+
+
+function nextSession() {
+  window.location.href = '../retrospective-mindwandering-survey.html';
+}
+
+// Add a click event listener to the start button
+startButton.addEventListener('click', startSession);
+submit.addEventListener('click',nextSession)
+</script>
+</html>
