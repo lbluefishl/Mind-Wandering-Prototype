@@ -39,7 +39,7 @@
       display: flex;
       flex-direction: column;
       margin-top: 20px;
-
+      font-size: 1.5em;
       text-align: center;
     }
 
@@ -63,8 +63,8 @@
 <body>
   <h1 id="instructions">Please review each image again, answering the prompts that follow.
     <br> Press Start to Begin</h1>
-  <button id="startButton">Start</button>
-  <img id="imageElement" src="first-image.png" style="display: none";>
+  <button id="startButton" style="font-size: 2em;">Start</button>
+  <img id="imageElement" src="001.png" style="display: none";>
   <form id="likertForm" style="display: none;">
     <div class="likert-item">
         <p>The comments are appropriate.</p>
@@ -108,7 +108,7 @@
     <button type="submit" id="submitButton" style="display: none"> Submit</button>
 
   </form>
-  <button id="nextButton" style="display: none;">Next</button>
+  <button id="nextButton" style="display: none; font-size: 2em;">Next</button>
  <script>
     // Get references to the necessary DOM elements
 const startButton = document.getElementById('startButton');
@@ -118,10 +118,9 @@ const form = document.getElementById('likertForm');
 const instructions = document.getElementById('instructions')
 // Set the image sources for each session
 const sessionImages = [
-  'first-image.png',
-  'second-image.png',
-  'third-image.png',
- 
+'001.png',
+'002.png',
+'003.png'
 ];
 
 // Variable to keep track of the current session

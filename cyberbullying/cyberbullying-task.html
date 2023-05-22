@@ -28,8 +28,8 @@ button {
 img {
   display: block;
   margin: auto ;
-  margin-top: 10%;
   max-width: 100%;
+  width: auto;
   height: auto;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -44,14 +44,14 @@ img {
 <body>
 
 
-  <div class="container">
+  <div id="container" class="container">
     <h1 id="instructions">Welcome to this task. 
         <br>
-        You will be shown 3 images, each for 15 seconds. Please carefully examine each image.
+        You will be shown 3 images, each for 10 seconds. Please carefully examine each image.
         <br>
         Press Start to begin.
     </h1>
-
+</div>
     <button id="startButton">Start Session</button>
     <img id="imageElement" src="first-image.png" style="display: none;">
 
@@ -73,12 +73,13 @@ const imageElement = document.getElementById('imageElement');
 const randomIndex = Math.floor(Math.random() * links.length);
     localStorage.setItem("currentTask","cyberbullying")
 const instructions = document.getElementById('instructions')
+const container = document.getElementById('container')
 
 // Set the image sources for each session
 const sessionImages = [
-  'first-image.png',
-  'second-image.png',
-  'third-image.png',
+  '001.png',
+'002.png',
+'003.png'
   
 ];
 
@@ -88,8 +89,8 @@ let currentSession = 0;
 // Function to handle the start of each session
 function startSession() {
     imageElement.style.display = 'block';
-    startButton.style.display ='none';
-    instructions.style.display='none';
+    startButton.remove();
+    instructions.remove();
   // Check if all sessions have been completed
   if (currentSession >= sessionImages.length) {
     // Redirect to another page after all sessions are completed
@@ -103,8 +104,8 @@ function startSession() {
   // Increment the current session counter
   currentSession++;
 
-  // Show the image for 15 seconds
-  setTimeout(nextSession, 15000);
+  // Show the image for 10 seconds
+  setTimeout(nextSession, 10000);
 }
 
 // Function to proceed to the next session
