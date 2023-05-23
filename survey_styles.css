@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #f3f3f3;
+    font-size: 2em;
 }
 
 h1 {
@@ -10,7 +11,7 @@ h1 {
 }
 
 form {
-    max-width: 700px;
+    max-width: 70%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
@@ -19,7 +20,7 @@ form {
 }
 
 .likert-scale-item {
-    margin-bottom: 20px;
+    margin-bottom: 2em;
 }
 
 .likert-scale-item label {
@@ -36,7 +37,8 @@ form {
 }
 
 .likert-scale-options input[type="radio"] {
-    margin-right: 10px;
+    margin-right: 1em;
+    margin-left: 1em;
 }
 
 .likert-scale-options label {
@@ -57,7 +59,7 @@ button {
     color: #fff;
     border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 2em;
     border-radius: 4px;
     cursor: pointer;
 }
