@@ -50,3 +50,10 @@ nav ul li a:hover {
     padding: 1em;
     border: solid #333;
 }
+
+div.topic {
+    border: solid black;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em;
+}

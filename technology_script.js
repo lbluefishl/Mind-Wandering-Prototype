@@ -42,4 +42,4 @@ videos.forEach(video => {
 
 setTimeout(() => {
 window.location.href = `${localStorage.getItem("currentTask")}/${localStorage.getItem("currentTask")}-outcome.html`; 
-}, 60000); 
+}, 30000); 

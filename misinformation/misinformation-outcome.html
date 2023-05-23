@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Misinformation Outcome</title>
+
+ <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      font-size: 1.5em;
+      text-align: center;
+    }
+
+    .likert-item {
+      margin-bottom: 10px;
+    }
+
+    .likert-item label {
+      font-weight: bold;
+    }
+
+    .likert-item input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .likert-item input[type="radio"] + label {
+      margin-right: 10px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4287f5;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+ </style>
+</head>
+
+<body>
+  <div id="container" class="container">
+    <h1 id="instructions">       
+        Complete the survey below regarding the video you watched before the BREAK. 
+    </h1>
+    <div style="text-align: center;">
+        <img  src="01.png" style="width: 20vh">
+    </div>
+</div>
+
+
+
+<form id="likertForm">
+    <div class="likert-item">
+        <p>I have seen this content creator before.</p>
+      <input type="radio" id="item1_sd" name="item1" value="Strongly Disagree">
+      <label for="item1_sd">Yes</label>
+      <input type="radio" id="item1_d" name="item1" value="Disagree">
+      <label for="item1_d">No</label>
+    </div>
+    <div class="likert-item">
+        <p>The video has influenced your understanding of Teflon (non-stick) pans.</p>
+      <input type="radio" id="item2_sd" name="item2" value="Strongly Disagree">
+      <label for="item2_sd">Strongly Disagree</label>
+      <input type="radio" id="item2_d" name="item2" value="Disagree">
+      <label for="item2_d">Disagree</label>
+      <input type="radio" id="item2_n" name="item2" value="Neutral">
+      <label for="item2_n">Neutral</label>
+      <input type="radio" id="item2_a" name="item2" value="Agree">
+      <label for="item2_a">Agree</label>
+      <input type="radio" id="item2_sa" name="item2" value="Strongly Agree">
+      <label for="item2_sa">Strongly Agree</label>
+    </div>
+    <div class="likert-item">
+        <p>There are issues with the content creator's reasoning.</p>
+      <input type="radio" id="item3_sd" name="item3" value="Strongly Disagree">
+      <label for="item3_sd">Strongly Disagree</label>
+      <input type="radio" id="item3_d" name="item3" value="Disagree">
+      <label for="item3_d">Disagree</label>
+      <input type="radio" id="item3_n" name="item3" value="Neutral">
+      <label for="item3_n">Neutral</label>
+      <input type="radio" id="item3_a" name="item3" value="Agree">
+      <label for="item3_a">Agree</label>
+      <input type="radio" id="item3_sa" name="item3" value="Strongly Agree">
+      <label for="item3_sa">Strongly Agree</label>
+    </div>
+    </form>
+    <button type="submit" id="submitButton" style="font-size: 2em;"> Submit</button>
+
+
+
+
+</body>
+
+
+
+
+
+
+<script>
+const button = document.getElementById('submitButton') 
+
+button.addEventListener('click', function() {
+    window.location.href = '../retrospective-mindwandering-survey.html'
+});
+
+
+</script>
+</html>

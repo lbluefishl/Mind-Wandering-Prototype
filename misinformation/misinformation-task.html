@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Misinformation Task</title>
+ <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+video {
+    width: 40vh;
+}
+
+
+ </style>
+
+
+
+
+</head>
+<body>
+
+
+  <div id="container" class="container">
+    <h1 id="instructions"> 
+        
+        Watch the video below. When the video ends, you will be given another task.
+      
+    </h1>
+</div>
+ 
+
+<div style="text-align: center;"> 
+    <video  controls onended="redirect()">
+        <source src="01.mp4" type="video/mp4">
+      </video>
+    </div>
+
+
+  
+</body>
+
+
+
+
+
+
+<script>
+
+const links = [
+    '../undemanding-task-instructions.html',
+    '../demanding-task.html'
+  ];
+
+const randomIndex = Math.floor(Math.random() * links.length);
+localStorage.setItem("currentTask","misinformation")
+
+
+function redirect() {
+      window.location.href = links[randomIndex];
+    }
+
+
+</script>
+</html>
